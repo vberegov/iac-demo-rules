@@ -1,3 +1,3 @@
 parse() {
-  echo "Hello ${1}!"
+  jq '.[].infrastructureAsCodeIssues[].msg' ../results.json
 }

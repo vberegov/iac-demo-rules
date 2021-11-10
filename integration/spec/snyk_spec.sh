@@ -1,7 +1,11 @@
 Describe 'snyk_cli.sh'
   Include lib/snyk_results.sh
-  It 'includes our custom rules output'
-    When call parse ShellSpec
-    The output should equal 'Hello ShellSpec!'
+  It 'BEN-K8S-1 - included in thte output'
+    When call parse
+    The output should include 'input.spec.template.spec.containers[nginx:latest]'
+  End
+  It 'BEN-K8S-2 - included in thte output'
+    When call parse
+    The output should include 'input.spec.template.spec.containers[nginx:latest]'
   End
 End
