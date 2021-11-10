@@ -30,7 +30,7 @@ jobs:
         run: |
           wget https://github.com/shellspec/shellspec/releases/latest/download/shellspec-dist.tar.gz
           tar zxvf shellspec-dist.tar.gz
-          ln -s shellspec/shellspec /usr/bin/shellspec
+          ln -s shellspec/shellspec /bin/shellspec
           cd integration
           shellspec
         shell: bash
