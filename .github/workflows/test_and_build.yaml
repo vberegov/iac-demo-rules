@@ -27,4 +27,6 @@ jobs:
           file: .
           args: --rules=bundle.tar.gz --org=ben.laplanche --json-output=results.json
       - name: Validate the Snyk IaC results
-        run: echo "blah"
+        run: |
+          cd integration
+          shellspec
