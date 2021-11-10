@@ -28,11 +28,8 @@ jobs:
           args: --rules=bundle.tar.gz --org=ben.laplanche --json-file-output=results.json
       - name: Validate the Snyk IaC results
         run: |
-          brew
-          wget https://github.com/shellspec/shellspec/releases/latest/download/shellspec-dist.tar.gz
-          tar zxvf shellspec-dist.tar.gz
-          echo $PATH
-          sudo ln -s $pwd/shellspec/shellspec /usr/local/bin/
+          brew tap shellspec/shellspec
+          brew install shellspec
           cd integration
           shellspec
         shell: bash
