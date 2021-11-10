@@ -25,8 +25,8 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           file: .
-          args: --rules=bundle.tar.gz --org=ben.laplanche --json-output=results.json
+          args: --rules=bundle.tar.gz --org=ben.laplanche --json-file-output=results.json
       - name: Validate the Snyk IaC results
         run: |
-          cd integration
-          ./shellspec
+          chmod +x scripts/shellspec.sh
+          ./scripts/shellspec.sh
