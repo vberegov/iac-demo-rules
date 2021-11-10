@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: Build & Test Custom Rules 
 on: [push]
 jobs:
   test_and_build:
@@ -19,12 +19,12 @@ jobs:
         run: |
           snyk-iac-rules build
       - name: Run integration tests with Snyk IaC CLI
-        continue-on-error: false
+        continue-on-error: true #Setting this as we're only looking to validate that our rule correctly appeared in the results
         uses: snyk/actions/iac@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           file: .
-          args: --rules=bundle.tar.gz --org=ben.laplanche
+          args: --rules=bundle.tar.gz --org=ben.laplanche --json-output=results.json
       - name: Validate the Snyk IaC results
         run: echo "blah"
