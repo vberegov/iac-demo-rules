@@ -28,6 +28,9 @@ jobs:
           args: --rules=bundle.tar.gz --org=ben.laplanche --json-file-output=results.json
       - name: Validate the Snyk IaC results
         run: |
-          chmod +x ./scripts/shellspec.sh
-          ./scripts/shellspec.sh
+          wget https://github.com/shellspec/shellspec/releases/latest/download/shellspec-dist.tar.gz
+          tar zxvf shellspec-dist.tar.gz
+          ln -s shellspec/shellspec /usr/bin/shellspec
+          cd integration
+          shellspec
         shell: bash
