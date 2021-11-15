@@ -31,6 +31,7 @@ Upon merging the Pull Request the release process is kicked off
 
 Local Development
 
+- Ensure you are upto date with `git pull`
 - Create a new branch locally, this should be named `feat/<name>` e.g. `feat/ben-k8s-3`
 - Make your change - e.g. adding a new rule
   - Add your integration tests into the `/integration/spec/snyk_spec.sh`
