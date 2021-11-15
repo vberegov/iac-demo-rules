@@ -14,10 +14,10 @@ jobs:
           version_file: ./VERSION
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Get Version
-      #   id: version
-      #   run: |
-      #     echo ::set-output name=version_tag::$(echo ./VERSION)
+      - name: Get Version
+        id: version
+        run: |
+          echo ::set-output name=version_tag::$(cat ./VERSION)
       - name: Push changes to master 
         uses: ad-m/github-push-action@master
         with:
