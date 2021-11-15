@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Run the tests
+        run: |
+         snyk-iac-rules test 
+      - name: Build the bundle
+        run: |
+          snyk-iac-rules build
       - name: Bump version
         uses: remorses/bump-version@js
         with:
@@ -32,4 +38,4 @@ jobs:
           automatic_release_tag: ${{ steps.version.outputs.version_tag }}
           prerelease: false
           files: |
-            ./VERSION 
+            bundle.tar.gz
