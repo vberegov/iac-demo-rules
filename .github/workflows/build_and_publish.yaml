@@ -14,10 +14,10 @@ jobs:
           version_file: ./VERSION
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # - name: Get Version
-      #   id: version
-      #   run: |
-      #     echo ::set-output name=version_tag::$(cat ./VERSION)
+      - name: Get Version
+        id: version
+        run: |
+          echo ::set-output name=version_tag::$(cat ./VERSION)
       - name: Push changes to master 
         uses: ad-m/github-push-action@master
         with:
@@ -29,6 +29,7 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: ${{ steps.version.outputs.version_tag }}
           prerelease: false
           files: |
             ./VERSION 
