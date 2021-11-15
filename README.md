@@ -15,7 +15,8 @@ This repository currently has two example Kubernetes rules which
 
 ## Workflow
 
-This repository demonstrates a pull-request based workflow.
+This repository demonstrates a pull-request based workflow, with commit status checks enabled so that the development workflow needs to pass before the PR can be merged.
+
 Upon merging the Pull Request the release process is kicked off
 
 ### Setup
@@ -30,7 +31,7 @@ Upon merging the Pull Request the release process is kicked off
 
 Local Development
 
-- Create a new branch locally
+- Create a new branch locally, this should be named `feat/<name>` e.g. `feat/ben-k8s-3`
 - Make your change - e.g. adding a new rule
   - Add your integration tests into the `/integration/spec/snyk_spec.sh`
 - Run your unit tests with `snyk-iac-rules test`
