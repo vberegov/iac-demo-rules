@@ -50,3 +50,7 @@ jobs:
           prerelease: false
           files: |
             bundle.tar.gz
+      - name: Publish rules
+        run: snyk-iac-rules push --registry $OCI_REGISTRY_URL bundle.tar.gz
+        env:
+          OCI_REGISTRY_URL: "docker.io/benlaplanche/iac-custom-rules:${{ steps.version.outputs.version_tag }}"
