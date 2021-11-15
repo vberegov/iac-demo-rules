@@ -56,7 +56,7 @@ jobs:
           OCI_REGISTRY_URL: "docker.io/benlaplanche/iac-custom-rules:${{ steps.version.outputs.version_tag }}"
       - name: Update Snyk
         run: |
-          curl --location --request PATCH 'http://api.snyk.io/v3/groups/961b5f-6acd-46ef-b209-fcffc6930ef1/settings/iac/?version=2021-11-03~beta' \
+          curl --location --request PATCH 'http://api.snyk.io/v3/groups/ea961b5f-6acd-46ef-b209-fcffc6930ef1/settings/iac/?version=2021-11-03~beta' \
           --header 'Content-Type: application/vnd.api+json' \
           --header 'Authorization: token ${{ secrets.SNYK_TOKEN }}' \
           --data-raw '{
