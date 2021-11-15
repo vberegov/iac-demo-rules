@@ -8,6 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 15
+      - name: Install snyk-iac-rules
+        run: npm i -g snyk-iac-rules
       - name: Run the tests
         run: |
          snyk-iac-rules test 
