@@ -60,3 +60,5 @@ When the PR has passed all of the checks:
   - Uploads the `bundle.tar.gz` file to the release
   - Pushes the artefact to your configured
   - Configures your Snyk Group with the Bundle location & specific tag to be used
+
+.
