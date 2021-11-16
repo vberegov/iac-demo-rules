@@ -31,6 +31,7 @@ Upon merging the Pull Request the release process is kicked off
 
 Local Development
 
+- Ensure you are upto date with `git pull`
 - Create a new branch locally, this should be named `feat/<name>` e.g. `feat/ben-k8s-3`
 - Make your change - e.g. adding a new rule
   - Add your integration tests into the `/integration/spec/snyk_spec.sh`
@@ -59,3 +60,5 @@ When the PR has passed all of the checks:
   - Uploads the `bundle.tar.gz` file to the release
   - Pushes the artefact to your configured
   - Configures your Snyk Group with the Bundle location & specific tag to be used
+
+.
